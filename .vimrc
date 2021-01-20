@@ -153,4 +153,7 @@ let g:ycm_clangd_binary_path = exepath("clangd")
 command CDC cd %:p:h
 command CDR cd $INETROOT
 command CDT cd $INETROOT/testsrc
+command CP let @*=expand("%:p:h")
+command CF let @*=expand("%:p")
+
 command Diff execute 'w !git diff --no-index % -'
