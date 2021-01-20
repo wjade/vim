@@ -141,7 +141,7 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 
-autocmd BufWritePre * :call TrimWhitespace()
+"autocmd BufWritePre * :call TrimWhitespace()
 autocmd FileType typescript :call GoYCM()
 autocmd FileType cpp,cxx,h,hpp,c,cs :call GoYCM()
 
