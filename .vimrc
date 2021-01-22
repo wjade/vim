@@ -135,13 +135,16 @@ fun! GoCoc()
     noremap <buffer> <leader>cr :CocRestart
 endfun
 
+fun! TrimWhitespaceEmpty()
+endfun
+
 fun! TrimWhitespace()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
 endfun
 
-"autocmd BufWritePre * :call TrimWhitespace()
+autocmd BufWritePre * :call TrimWhitespaceEmpty()
 autocmd FileType typescript :call GoYCM()
 autocmd FileType cpp,cxx,h,hpp,c,cs :call GoYCM()
 
@@ -155,5 +158,5 @@ command CDR cd $INETROOT
 command CDT cd $INETROOT/testsrc
 command CP let @*=expand("%:p:h")
 command CF let @*=expand("%:p")
-
 command Diff execute 'w !git diff --no-index % -'
+
