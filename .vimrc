@@ -45,6 +45,7 @@ Plugin 'Yggdroot/LeaderF'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
+Plugin 'FooSoft/vim-argwrap'
 call vundle#end()
 
 colorscheme gruvbox
@@ -85,6 +86,8 @@ nmap ' <C-i>
 noremap <leader>nf : NERDTreeFind<CR>
 noremap <leader>nt : NERDTreeToggle<CR>
 
+"Arg wrap
+nnoremap <silent> <leader>a :ArgWrap<CR>
 
 "map <Leader>fr :Leaderf! rg<CR>
 let g:Lf_ShortcutF = "<leader>ff"
@@ -159,4 +162,3 @@ command CDT cd $INETROOT/testsrc
 command CP let @*=expand("%:p:h")
 command CF let @*=expand("%:p")
 command Diff execute 'w !git diff --no-index % -'
-
